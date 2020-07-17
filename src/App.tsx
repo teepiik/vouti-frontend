@@ -1,16 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { createGlobalStyle } from 'styled-components'
 
-function App() {
+import { Header } from './Components/Header'
+import { DebtListing } from './Components/DebtListing'
+import { Debt } from './types'
+import debtService from './Services/debts'
+
+const App: React.FC = () => {
+  const [debts, setDebts] = useState<Array<Debt>>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await debtService.getAll()
+      setDebts(result)
+    }
+    fetchData()
+  }, [])
+
   return (
-    <div className='Container'>
-      <header className='App-header'>
-        <p>Hello Vouti</p>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Header />
+      <DebtListing items={debts} />
+    </>
   )
 }
 
-const voutiText =
-  'Voudit kuuluivat keskiajan ylhäisaateliin. Heidän tehtäviään oli periä kuninkaalle menevät verot sekä toimia käskynhaltijana tietyllä alueella tai linnassa linnanisännän apulaisena. Esimerkiksi Turun linnanvoutina toimi vuonna 1515 laamanni Klaus Henrikinpojan poika Krister.'
+const GlobalStyle = createGlobalStyle`
+  html,
+  body {
+    height: 100%
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.5;
+    position: relative;
+  }
+
+  div {
+    box-sizing: border-box;
+  }
+
+  #root {
+    min-height: 100%;
+    position: relative;
+  }
+`
 
 export default App
