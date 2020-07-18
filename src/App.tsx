@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 import { Header } from './Components/Header'
 import { DebtListing } from './Components/DebtListing'
+import { Home } from './Components/Home'
+import { Statistics } from './Components/Statistics'
 import { Debt } from './types'
 import debtService from './Services/debts'
 import Background from './bgpic.png'
@@ -19,11 +22,21 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <>
+    <div>
       <GlobalStyle />
       <Header />
-      <DebtListing items={debts} />
-    </>
+      <Switch>
+        <Route path='/velat'>
+          <DebtListing items={debts} />
+        </Route>
+        <Route path='/stats'>
+          <Statistics />
+        </Route>
+        <Route path='/'>
+          <Home />
+        </Route>
+      </Switch>
+    </div>
   )
 }
 
