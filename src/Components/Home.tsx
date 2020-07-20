@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const Home: React.FC = () => {
   return (
     <Homepage>
-      <h1>Vouti</h1>
       <VoutiText>
         Voudit kuuluivat keskiajan ylhäisaateliin. Heidän tehtäviään oli periä
         kuninkaalle menevät verot sekä toimia käskynhaltijana tietyllä alueella

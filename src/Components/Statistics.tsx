@@ -5,6 +5,7 @@ export const Statistics: React.FC = () => {
   return (
     <Statspage>
       <h1>Stats</h1>
+      <p>Coming soon</p>
     </Statspage>
   )
 }
