@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
+import Analytics from 'analytics'
+import googleAnalytics from '@analytics/google-analytics'
 
 import { Header } from './Components/Header'
 import { DebtListing } from './Components/DebtListing'
