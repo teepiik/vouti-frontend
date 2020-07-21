@@ -26,8 +26,6 @@ const App: React.FC = () => {
       }),
     ],
   })
-  const no = process.env.REACT_APP_GA_TRACKING_ID
-  console.log(no)
 
   useEffect(() => {
     const fetchData = async () => {
