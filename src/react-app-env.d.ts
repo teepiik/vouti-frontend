@@ -1,3 +1,3 @@
 /// <reference types="react-scripts" />
 
-declare module '@analytic/google-analytics';
+declare module '@analytics/google-analytics'

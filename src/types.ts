@@ -10,3 +10,9 @@ export interface Debt {
   comment?: string
   __v?: number
 }
+export interface Analytics {
+  app?: string | undefined
+  version?: string | undefined
+  debug?: boolean | undefined
+  plugins?: object | undefined
+}

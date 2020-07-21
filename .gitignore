@@ -18,9 +18,6 @@
 .env.test.local
 .env.production.local
 
-# linting / editor setup (I disable semi-colons)
-.vscode
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

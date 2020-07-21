@@ -1,7 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { AnalyticsInstance } from 'analytics'
 
-export const Home: React.FC = () => {
+interface Props {
+  analytics: AnalyticsInstance
+}
+
+export const Home: React.FC<Props> = ({ analytics }) => {
+  analytics.page()
   return (
     <Homepage>
       <VoutiText>
