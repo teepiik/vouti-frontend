@@ -1,51 +1,51 @@
-import React, { useState, useEffect } from 'react'
-import { createGlobalStyle } from 'styled-components'
-import { Switch, Route } from 'react-router-dom'
-import Analytics from 'analytics'
-import googleAnalytics from '@analytics/google-analytics'
+import React, { useState, useEffect } from 'react';
+import { createGlobalStyle } from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
+import Analytics from 'analytics';
+import googleAnalytics from '@analytics/google-analytics';
 
-import { Header } from './Components/Header'
-import { DebtListing } from './Components/DebtListing'
-import { Home } from './Components/Home'
-import { Statistics } from './Components/Statistics'
-import { Debt } from './types'
-import debtService from './Services/debts'
-import Background from './bgpic.png'
+import { Header } from './Components/Header';
+import { DebtListing } from './Components/DebtListing';
+import { Home } from './Components/Home';
+import { Statistics } from './Components/Statistics';
+import { Debt } from './types';
+import debtService from './Services/debts';
+import Background from './bgpic.png';
 
 const App: React.FC = () => {
-  const [debts, setDebts] = useState<Array<Debt>>([])
+  const [debts, setDebts] = useState<Array<Debt>>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await debtService.getAll()
-      setDebts(result)
-    }
-    fetchData()
-  }, [])
+      const result = await debtService.getAll();
+      setDebts(result);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
       <GlobalStyle />
       <Header />
       <Switch>
-        <Route path='/velat'>
+        <Route path="/velat">
           <DebtListing items={debts} />
         </Route>
-        <Route path='/stats'>
+        <Route path="/stats">
           <Statistics />
         </Route>
-        <Route path='/'>
+        <Route path="/">
           <Home />
         </Route>
       </Switch>
     </div>
-  )
-}
+  );
+};
 
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    height: 100%
+    height: 100%;
     margin: 0px;
     padding: 0px;
     line-height: 1.5;
@@ -62,6 +62,6 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     position: relative;
   }
-`
+`;
 
-export default App
+export default App;
