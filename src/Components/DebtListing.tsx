@@ -11,24 +11,29 @@ interface Props {
 }
 
 export const DebtListing: React.FC<Props> = ({ items, analytics }) => {
-  analytics.page()
   analytics.identify('user-id-222', {
-    firstName: 'test',
-    lastName: 'dummy',
-    email: 'foo@foo.com',
+    Role: 'Test-Role',
   })
+  analytics.page()
   console.log(items)
   return (
-    <ListingWrapper>
-      {items?.map((item, i) => (
-        <li key={i}>
-          <DebtCard item={item} />
-        </li>
-      ))}
-    </ListingWrapper>
+    <DebtListingDiv>
+      <ListingWrapper>
+        {items?.map((item, i) => (
+          <li key={i}>
+            <DebtCard item={item} />
+          </li>
+        ))}
+      </ListingWrapper>
+    </DebtListingDiv>
   )
 }
 
 const ListingWrapper = styled.ul`
   list-style-type: none;
+`
+
+const DebtListingDiv = styled.div`
+  margin: auto;
+  max-width: 32rem;
 `

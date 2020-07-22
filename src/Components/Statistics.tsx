@@ -10,7 +10,7 @@ export const Statistics: React.FC<Props> = ({ analytics }) => {
   analytics.page()
   return (
     <Statspage>
-      <h1>Stats</h1>
+      <h1>Pistepörssi</h1>
       <p>Coming soon</p>
     </Statspage>
   )

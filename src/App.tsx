@@ -10,7 +10,6 @@ import { Home } from './Components/Home'
 import { Statistics } from './Components/Statistics'
 import { Debt } from './types'
 import debtService from './Services/debts'
-import Background from './bgpic.png'
 
 const App: React.FC = () => {
   const [debts, setDebts] = useState<Array<Debt>>([])
@@ -56,14 +55,13 @@ const App: React.FC = () => {
 
 const GlobalStyle = createGlobalStyle`
   html,
+  @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
   body {
     height: 100%;
-    margin: 0px;
-    padding: 0px;
     line-height: 1.5;
     position: relative;
-    background-image: url(${Background});
-    background-color: #cccccc;
+    background-color: burlywood;
+    font-family: 'Berkshire Swash', cursive;
   }
 
   div {

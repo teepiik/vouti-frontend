@@ -27,6 +27,8 @@ const HeaderWrapper = styled.header`
   padding: 0.2rem 0;
   border-bottom: red;
   z-index: 10;
+  margin: auto;
+  max-width: 32rem;
 `
 
 const Menubar = styled.nav`
