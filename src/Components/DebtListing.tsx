@@ -31,6 +31,8 @@ export const DebtListing: React.FC<Props> = ({ items, analytics }) => {
 
 const ListingWrapper = styled.ul`
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 `
 
 const DebtListingDiv = styled.div`

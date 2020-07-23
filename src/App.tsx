@@ -56,14 +56,17 @@ const App: React.FC = () => {
 const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
-    line-height: 1.5;
     position: relative;
     background-color: burlywood;
     font-family: 'Berkshire Swash', cursive;
+    margin: 0;
+    padding: 0;
   }
 
   div {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   #root {

@@ -5,18 +5,24 @@ import { Link } from 'react-router-dom'
 export const Header: React.FC = () => {
   return (
     <HeaderWrapper>
-      <Logo>Vouti</Logo>
-      <Menubar>
-        <NavButton>
-          <Link to='/'>Koti</Link>
-        </NavButton>
-        <NavButton>
-          <Link to='/velat'>Velat</Link>
-        </NavButton>
-        <NavButton>
-          <Link to='/stats'>Statsit</Link>
-        </NavButton>
-      </Menubar>
+      <TopLine>
+        <Logo>Vouti</Logo>
+      </TopLine>
+      <NavBarWrapper>
+        <NavButtonsWrapper>
+          <Menubar>
+            <NavButton>
+              <Link to='/'>Koti</Link>
+            </NavButton>
+            <NavButton>
+              <Link to='/velat'>Velat</Link>
+            </NavButton>
+            <NavButton>
+              <Link to='/stats'>Statsit</Link>
+            </NavButton>
+          </Menubar>
+        </NavButtonsWrapper>
+      </NavBarWrapper>
     </HeaderWrapper>
   )
 }
@@ -24,11 +30,28 @@ export const Header: React.FC = () => {
 const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
-  padding: 0.2rem 0;
+  padding: 0;
   border-bottom: red;
   z-index: 10;
   margin: auto;
+  margin-bottom: 2rem;
+`
+
+const TopLine = styled.div`
+  background-color: maroon;
+  min-width: 100%;
+  height: 3rem;
+  text-align: center;
+`
+
+const NavButtonsWrapper = styled.div`
+  margin: auto;
   max-width: 32rem;
+`
+
+const NavBarWrapper = styled.div`
+  background-color: #00000d;
+  color: wheat;
 `
 
 const Menubar = styled.nav`
@@ -42,7 +65,7 @@ const NavButton = styled.span`
   }
   a:visited {
     text-decoration: none;
-    color: black;
+    color: wheat;
   }
   a:hover {
     font-weight: bolder;
@@ -54,5 +77,7 @@ const NavButton = styled.span`
 
 const Logo = styled.span`
   font-weight: bolder;
-  font-size: 1.5em;
+  font-size: 2em;
+  color: wheat;
+  letter-spacing: 0.15em;
 `
