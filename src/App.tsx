@@ -54,8 +54,6 @@ const App: React.FC = () => {
 }
 
 const GlobalStyle = createGlobalStyle`
-  html,
-  @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
   body {
     height: 100%;
     line-height: 1.5;
