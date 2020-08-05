@@ -61,6 +61,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Berkshire Swash', cursive;
     margin: 0;
     padding: 0;
+    overflow-y: overlay;
   }
 
   div {

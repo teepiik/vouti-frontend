@@ -16,4 +16,7 @@ export const Statistics: React.FC<Props> = ({ analytics }) => {
   )
 }
 
-const Statspage = styled.div``
+const Statspage = styled.div`
+  margin: auto;
+  max-width: 32rem;
+`

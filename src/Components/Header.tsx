@@ -30,10 +30,8 @@ export const Header: React.FC = () => {
 const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
-  padding: 0;
   border-bottom: red;
   z-index: 10;
-  margin: auto;
   margin-bottom: 2rem;
 `
 
@@ -54,9 +52,7 @@ const NavBarWrapper = styled.div`
   color: wheat;
 `
 
-const Menubar = styled.nav`
-  display: inline-block;
-`
+const Menubar = styled.nav``
 
 const NavButton = styled.span`
   padding: 0.5em;
