@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { AnalyticsInstance } from 'analytics'
 
 import { Debt } from '../types'
 import { DebtCard } from './DebtCard'
+import { NewDebtForm } from './NewDebtForm'
 
 interface Props {
   items?: Array<Debt>
@@ -11,6 +12,16 @@ interface Props {
 }
 
 export const DebtListing: React.FC<Props> = ({ items, analytics }) => {
+  const [showForm, setShowForm] = useState(false)
+
+  const changeFormVisibility = () => {
+    if (showForm === false) {
+      setShowForm(true)
+    } else {
+      setShowForm(false)
+    }
+  }
+
   analytics.identify('user-id-222', {
     Role: 'Test-Role',
   })
@@ -25,6 +36,10 @@ export const DebtListing: React.FC<Props> = ({ items, analytics }) => {
           </li>
         ))}
       </ListingWrapper>
+      <NewDebtForm visibility={showForm} />
+      <button onClick={changeFormVisibility}>
+        {showForm ? 'hide' : 'add new'}
+      </button>
     </DebtListingDiv>
   )
 }
