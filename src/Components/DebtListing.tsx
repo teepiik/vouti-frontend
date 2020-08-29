@@ -26,7 +26,6 @@ export const DebtListing: React.FC<Props> = ({ items, analytics }) => {
     Role: 'Test-Role',
   })
   analytics.page()
-  console.log(items)
   return (
     <DebtListingDiv>
       <ListingWrapper>
@@ -36,10 +35,10 @@ export const DebtListing: React.FC<Props> = ({ items, analytics }) => {
           </li>
         ))}
       </ListingWrapper>
-      <NewDebtForm visibility={showForm} />
-      <button onClick={changeFormVisibility}>
+      <FormButton onClick={changeFormVisibility}>
         {showForm ? 'hide' : 'add new'}
-      </button>
+      </FormButton>
+      <NewDebtForm visibility={showForm} />
     </DebtListingDiv>
   )
 }
@@ -53,4 +52,8 @@ const ListingWrapper = styled.ul`
 const DebtListingDiv = styled.div`
   margin: auto;
   max-width: 32rem;
+`
+
+const FormButton = styled.button`
+  margin-bottom: 1rem;
 `
